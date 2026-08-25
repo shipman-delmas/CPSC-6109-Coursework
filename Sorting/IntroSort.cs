@@ -26,15 +26,18 @@ public class IntroSort
     {
         int n = sortedArr.Length;
         
+        // last level; insertion sort.
         if (n < 16) { InsertionSort(); }
+        // second level; heap sort.
         else if (maxDepth == 0) { HeapSort(); }
+        // first level; quicksort.
         else
         {
             
         }
     }
     
-    public void InsertionSort() {}
-    
     public void HeapSort() {}
+    
+    public void InsertionSort() {}
 }

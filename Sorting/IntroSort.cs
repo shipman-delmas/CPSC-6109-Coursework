@@ -12,6 +12,8 @@
  */
 public class IntroSort
 {
+    private HeapSort heapSorter;
+    
     private int maxDepth;
     
     // Max depth is the recursion depth; it prevents the initial quicksort algorithm from
@@ -22,22 +24,46 @@ public class IntroSort
         Sort(arr, maxDepth);
     }
 
-    public void Sort(double[] sortedArr, int maxDepth)
+    public void Sort(double[] arr, int maxDepth)
     {
-        int n = sortedArr.Length;
+        int n = arr.Length;
+        Random random = new();
         
         // last level; insertion sort.
-        if (n < 16) { InsertionSort(); }
+        if (n < 16) { InsertionSort(arr); }
         // second level; heap sort.
-        else if (maxDepth == 0) { HeapSort(); }
+        else if (maxDepth == 0) { }
         // first level; quicksort.
         else
         {
+            int p = random.Next(0, n);
+
+            // indexing for partitions may be incorrect.
+            // unsure if reference algorithm means [0] or [1] by the pseudocode "A[1:p-1]."
+            // pseudocode meant [p] by [p-1] in terms of c# indexing.
+            double[] leftArr = arr[0 .. p];
+            double[] rightArr = arr[(p + 1) .. n];
             
+            Sort(leftArr, maxDepth - 1);
+            Sort(rightArr, maxDepth - 1);
         }
     }
     
-    public void HeapSort() {}
-    
-    public void InsertionSort() {}
+    // insertion sort simple enough to implement as single method; heap sort not so much...
+    public void InsertionSort(double[] arr)
+    {
+        int i = 1;
+        while (i < arr.Length)
+        {
+            int j = i;
+            while (j > 0 && arr[j - 1] > arr[j])
+            {
+                // swap using c# deconstruction syntax.
+                (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+                --j;
+            }
+
+            ++i;
+        }
+    }
 }

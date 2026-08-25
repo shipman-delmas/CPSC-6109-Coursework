@@ -11,10 +11,10 @@
  */
 public class CountingSort
 {
-    // k = n max.
+    // k = max value in array.
     // counting sort cannot compute floating point or non-whole numbers.
     // only effective for unsorted arrays of repeating values.
-    public int[] Sort(int[] arr, int k)
+    public static int[] Sort(int[] arr, int k)
     {
         int n = arr.Length;
         

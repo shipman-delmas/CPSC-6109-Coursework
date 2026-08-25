@@ -10,7 +10,7 @@
 public class MergeSort
 {
     // shouldn't array 'a' be the temp array and 'b' the source array in the copy method?
-    public void Copy(double[] tempArr, double[] sourceArr, int n)
+    public static void Copy(int[] tempArr, int[] sourceArr, int n)
     {
         // copies elements from a source array into a temporary array.
         for (int i = 0; i < n; ++i)
@@ -19,7 +19,7 @@ public class MergeSort
         }
     }
 
-    public void Merge(double[] sourceArr, int left, int right, int end, double[] tempArr)
+    public static void Merge(int[] sourceArr, int left, int right, int end, int[] tempArr)
     {
         int i = left;
         int j = right;
@@ -41,7 +41,7 @@ public class MergeSort
         }
     }
 
-    public void Sort(double[] sourceArr, double[] tempArr, int n)
+    public static void Sort(int[] sourceArr, int[] tempArr, int n)
     {
         for (int width = 1; width < n; width *= 2)
         {

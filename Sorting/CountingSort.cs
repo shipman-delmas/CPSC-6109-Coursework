@@ -7,7 +7,7 @@
  *              histogram in auxiliary array. Finds index ranges for sorted array in which aspecific value should
  *              be placed. 
  * Sources: Algorithm steps from Wikipedia.
- * Last Modified: August 25, 2026
+ * Last Modified: August 27, 2026
  */
 public class CountingSort
 {
@@ -23,7 +23,7 @@ public class CountingSort
         int[] sortedArr = new int[n];
 
         // histogram of value frequencies in unsorted array.
-        for (int i = 0; i < n - 1; ++i)
+        for (int i = 0; i < n; ++i)
         {
             // increment index in auxiliary array equal to value in unsorted array.
             int j = arr[i];
@@ -38,7 +38,7 @@ public class CountingSort
         }
 
         // reverse iteration over unsorted array and moves each value to sorted position in sorted array.
-        for (int i = n - 1; i > 0; --i)
+        for (int i = n - 1; i >= 0; --i)
         {
             // j = value at index i unsorted array.
             int j = arr[i];

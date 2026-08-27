@@ -12,51 +12,77 @@
  */
 public class IntroSort
 {
-    private HeapSort heapSorter;
-    
+    private HeapSort heapSorter = new();
     private int maxDepth;
     
     // Max depth is the recursion depth; it prevents the initial quicksort algorithm from
     // degrading to worse case efficiency after a certain number of recursive calls.
-    public void FindDepth(double[] arr)
+    public void FindDepth(int[] arr)
     {
         maxDepth = (int)Math.Floor(Math.Log(arr.Length, 2)) * 2;
         Sort(arr, maxDepth);
     }
 
-    public void Sort(double[] arr, int maxDepth)
+    public void Sort(int[] arr, int maxDepth)
     {
-        int n = arr.Length;
+        Sort(arr, 0, arr.Length, maxDepth);
+    }
+
+    private void Sort(int[] arr, int start, int end, int maxDepth)
+    {
+        int n = end - start;
         Random random = new();
         
         // last level; insertion sort.
-        if (n < 16) { InsertionSort(arr); }
+        if (n < 16) { InsertionSort(arr, start, end); }
         // second level; heap sort.
-        else if (maxDepth == 0) { }
+        else if (maxDepth == 0)
+        {
+            int[] subArr = arr[start .. end];
+            heapSorter.Sort(subArr);
+            Array.Copy(subArr, 0, arr, start, n);
+        }
         // first level; quicksort.
         else
         {
             int p = random.Next(0, n);
+            int pivot = arr[p];
 
-            // indexing for partitions may be incorrect.
-            // unsure if reference algorithm means [0] or [1] by the pseudocode "A[1:p-1]."
-            // pseudocode meant [p] by [p-1] in terms of c# indexing.
-            double[] leftArr = arr[0 .. p];
-            double[] rightArr = arr[(p + 1) .. n];
+            (arr[p], arr[end - 1]) = (arr[end - 1], arr[p]);
+
+            int storeIndex = start;
+
+            for (int i = start; i < end - 1; ++i)
+            {
+                if (arr[i] < pivot)
+                {
+                    (arr[i], arr[storeIndex]) = (arr[storeIndex], arr[i]);
+                    ++storeIndex;
+                }
+            }
+
+            (arr[storeIndex], arr[end - 1]) = (arr[end - 1], arr[storeIndex]);
             
-            Sort(leftArr, maxDepth - 1);
-            Sort(rightArr, maxDepth - 1);
+            Sort(arr, start, storeIndex, maxDepth - 1);
+            Sort(arr, storeIndex + 1, end, maxDepth - 1);
         }
+    }
+
+    public void InsertionSort(int[] arr)
+    {
+        InsertionSort(arr, 0, arr.Length);
     }
     
     // insertion sort simple enough to implement as single method; heap sort not so much...
-    public void InsertionSort(double[] arr)
+    private void InsertionSort(int[] arr, int start, int end)
     {
-        int i = 1;
-        while (i < arr.Length)
+        int i = ++start;
+        
+        while (i < end)
         {
             int j = i;
-            while (j > 0 && arr[j - 1] > arr[j])
+            
+            while (j > start && arr[j - 1] > arr[j])
             {
                 // swap using c# deconstruction syntax.
                 (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);

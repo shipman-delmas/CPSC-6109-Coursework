@@ -55,7 +55,7 @@ public class RadixSort
 
     // The main function to that sorts arr[] of size n using
     // Radix Sort
-    public static void radixsort(int[] arr, int n)
+    public static void Sort(int[] arr, int n)
     {
         // Find the maximum number to know number of digits
         int m = getMax(arr, n);

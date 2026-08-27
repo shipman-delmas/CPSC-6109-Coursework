@@ -1,0 +1,15 @@
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\bin\Debug\net10.0\CPSC-6109-Coursework.exe
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\bin\Debug\net10.0\CPSC-6109-Coursework.deps.json
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\bin\Debug\net10.0\CPSC-6109-Coursework.runtimeconfig.json
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\bin\Debug\net10.0\CPSC-6109-Coursework.dll
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\bin\Debug\net10.0\CPSC-6109-Coursework.pdb
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.AssemblyInfoInputs.cache
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.AssemblyInfo.cs
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.csproj.CoreCompileInputs.cache
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.sourcelink.json
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.dll
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\refint\CPSC-6109-Coursework.dll
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.pdb
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\CPSC-6109-Coursework.genruntimeconfig.cache
+C:\Users\delma\OneDrive\Desktop\CPSC-6109-Coursework\CPSC-6109-Coursework\obj\Debug\net10.0\ref\CPSC-6109-Coursework.dll

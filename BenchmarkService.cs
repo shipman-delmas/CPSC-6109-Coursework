@@ -11,14 +11,38 @@ public class BenchmarkService
     public string Benchmark(int[] data)
     {
         int n = data.Length;
-        
-        CountingSort.Sort(data, data.Max());
-        
-        // merge sort.
+        string result = "";
+
+        int[] countingData = data;
+        int[] mergeData = data;
+        int[] radixData = data;
+        int[] introData = data;
+
+        Stopwatch timer = Stopwatch.StartNew();
+        CountingSort.Sort(countingData, countingData.Max());
+        timer.Stop();
+
+        result += $"Counting Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
+
+        timer.Restart();
         int[] tempArr = new int[n];
-        MergeSort.Copy(tempArr, data, n);
-        // MergeSort.Merge(data, )
+        MergeSort.Sort(mergeData, tempArr, n);
+        timer.Stop();
         
-        return $"";
+        result += $"Merge Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
+        
+        timer.Restart();
+        RadixSort.Sort(radixData, n);
+        timer.Stop();
+        
+        result += $"Radix Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
+
+        timer.Restart();
+        IntroSort.Sort(introData);
+        timer.Stop();
+        
+        result += $"Intro Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
+        
+        return result;
     }
 }

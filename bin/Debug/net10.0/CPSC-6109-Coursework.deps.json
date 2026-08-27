@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "CPSC-6109-Coursework/1.0.0": {
+        "runtime": {
+          "CPSC-6109-Coursework.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CPSC-6109-Coursework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

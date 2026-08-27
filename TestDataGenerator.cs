@@ -4,9 +4,9 @@ public class TestDataGenerator
 {
     private Random random = new();
 
-    public double[] Generate(int size)
+    public int[] Generate(int size)
     {
-        double[] arr = new double[size];
+        int[] arr = new int[size];
 
         for (int i = 0; i < size; ++i)
         {

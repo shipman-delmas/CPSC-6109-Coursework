@@ -10,7 +10,13 @@ public class Program
 {
 	public static void Main()
 	{
-		TestDataGenerator generator;
-		BenchmarkService benchmark;
+		TestDataGenerator generator = new();
+		BenchmarkService benchmark = new();
+
+		string first = benchmark.Benchmark(generator.Generate(10));
+		string second = benchmark.Benchmark(generator.Generate(11));
+		string third = benchmark.Benchmark(generator.Generate(12));
+		
+		Console.WriteLine();
 	}
 }

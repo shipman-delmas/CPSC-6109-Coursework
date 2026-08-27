@@ -39,7 +39,7 @@ public class HeapSort
     }
 
     // Main function to do heap sort
-    public void Sort(int[] arr) {
+    public static void Sort(int[] arr) {
         int n = arr.Length;
 
         // Build heap (rearrange vector)

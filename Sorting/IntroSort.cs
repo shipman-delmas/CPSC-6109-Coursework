@@ -12,23 +12,22 @@
  */
 public class IntroSort
 {
-    private HeapSort heapSorter = new();
     private int maxDepth;
     
     // Max depth is the recursion depth; it prevents the initial quicksort algorithm from
     // degrading to worse case efficiency after a certain number of recursive calls.
-    public void FindDepth(int[] arr)
+    public static int FindDepth(int[] arr)
     {
-        maxDepth = (int)Math.Floor(Math.Log(arr.Length, 2)) * 2;
-        Sort(arr, maxDepth);
+        return (int)Math.Floor(Math.Log(arr.Length, 2)) * 2;
     }
 
-    public void Sort(int[] arr, int maxDepth)
+    public static void Sort(int[] arr)
     {
+        int maxDepth = FindDepth(arr);
         Sort(arr, 0, arr.Length, maxDepth);
     }
 
-    private void Sort(int[] arr, int start, int end, int maxDepth)
+    private static void Sort(int[] arr, int start, int end, int maxDepth)
     {
         int n = end - start;
         Random random = new();
@@ -39,7 +38,7 @@ public class IntroSort
         else if (maxDepth == 0)
         {
             int[] subArr = arr[start .. end];
-            heapSorter.Sort(subArr);
+            HeapSort.Sort(subArr);
             Array.Copy(subArr, 0, arr, start, n);
         }
         // first level; quicksort.
@@ -68,13 +67,13 @@ public class IntroSort
         }
     }
 
-    public void InsertionSort(int[] arr)
+    public static void InsertionSort(int[] arr)
     {
         InsertionSort(arr, 0, arr.Length);
     }
     
     // insertion sort simple enough to implement as single method; heap sort not so much...
-    private void InsertionSort(int[] arr, int start, int end)
+    private static void InsertionSort(int[] arr, int start, int end)
     {
         int i = ++start;
         

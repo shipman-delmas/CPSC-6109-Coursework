@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CPSC-6109-Coursework")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19a47bf2469399831cb8a358711bd7092948f940")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f4c8f39e49387eed3f33d660af45749486faab1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CPSC-6109-Coursework")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CPSC-6109-Coursework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

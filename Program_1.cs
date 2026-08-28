@@ -8,7 +8,7 @@
  *				Random integers are within the range 0 to 100,000 and generate based on the same seed. 
  * Last Modified: August 28, 2026
  */
-public class Program
+public class Program_1
 {
 	public static void Main()
 	{

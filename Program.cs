@@ -3,8 +3,10 @@
 /*
  * Author: Delmas Shipman
  * Class: CPSC 6109
- * Description:
- * Last Modified: August 27, 2026
+ * Description: Benchmarks the execution time of sorting algorithms on random integer arrays of varying
+ *				predetermined lengths. Five input sizes execute for three runs in four sorting algorithms.
+ *				Random integers are within the range 0 to 100,000 and generate based on the same seed. 
+ * Last Modified: August 28, 2026
  */
 public class Program
 {
@@ -13,11 +15,11 @@ public class Program
 		TestDataGenerator generator = new();
 		BenchmarkService benchmark = new();
 
-		int firstInputSize = 8000;
-		int secondInputSize = 16000;
-		int thirdInputSize = 24000;
-		int fourthInputSize = 32000;
-		int fifthInputSize = 40000;
+		const int firstInputSize = 250000;
+		const int secondInputSize = 500000;
+		const int thirdInputSize = 1000000;
+		const int fourthInputSize = 5000000;
+		const int fifthInputSize = 25000000;
 
 		Console.WriteLine("Benchmarking First Dataset...");
 		Console.WriteLine("First Run...");
@@ -63,29 +65,29 @@ public class Program
 		
 		Console.WriteLine("Benchmarking Fourth Dataset...");
 		Console.WriteLine("First Run...");
-		string fourthDataSet1 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fourthDataSet1 = benchmark.Benchmark(generator.Generate(fourthInputSize));
 		Console.WriteLine("Complete.");
 		
 		Console.WriteLine("Second Run...");
-		string fourthDataSet2 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fourthDataSet2 = benchmark.Benchmark(generator.Generate(fourthInputSize));
 		Console.WriteLine("Complete.");
 		
 		Console.WriteLine("Third Run...");
-		string fourthDataSet3 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fourthDataSet3 = benchmark.Benchmark(generator.Generate(fourthInputSize));
 		Console.WriteLine("Complete.");
 		Console.WriteLine("Fourth Dataset Benchmarked.");
 		
 		Console.WriteLine("Benchmarking Fifth Dataset...");
 		Console.WriteLine("First Run...");
-		string fifthDataSet1 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fifthDataSet1 = benchmark.Benchmark(generator.Generate(fifthInputSize));
 		Console.WriteLine("Complete.");
 		
 		Console.WriteLine("Second Run...");
-		string fifthDataSet2 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fifthDataSet2 = benchmark.Benchmark(generator.Generate(fifthInputSize));
 		Console.WriteLine("Complete.");
 		
 		Console.WriteLine("Third Run...");
-		string fifthDataSet3 = benchmark.Benchmark(generator.Generate(firstInputSize));
+		string fifthDataSet3 = benchmark.Benchmark(generator.Generate(fifthInputSize));
 		Console.WriteLine("Complete.");
 		Console.WriteLine("Fifth Dataset Benchmarked.");
 		

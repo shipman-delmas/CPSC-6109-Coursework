@@ -3,7 +3,9 @@
 /*
  * Author: Delmas Shipman
  * Class: CPSC 6109
- * Description:
+ * Description: Implements a radix sort algorithm; begins by sorting the least significant digit in each value and
+ *              sorts the next most significant digit with each pass. Values retain the relative order of the previous
+ *              pass.
  * Sources: Code taken from GeeksForGeeks.com
  * Last Modified: August 27, 2026
  */

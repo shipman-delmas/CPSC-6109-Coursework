@@ -75,20 +75,15 @@ public class IntroSort
     // insertion sort simple enough to implement as single method; heap sort not so much...
     private static void InsertionSort(int[] arr, int start, int end)
     {
-        int i = ++start;
-        
-        while (i < end)
+        for (int i = start + 1; i < end; i++)
         {
             int j = i;
             
             while (j > start && arr[j - 1] > arr[j])
             {
-                // swap using c# deconstruction syntax.
                 (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
-                --j;
+                j--;
             }
-
-            ++i;
         }
     }
 }

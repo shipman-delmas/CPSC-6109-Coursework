@@ -4,7 +4,7 @@ public class TestDataGenerator
 {
     private Random random = new();
 
-    public int[] Generate(int size)
+    public int[] Generate(long size)
     {
         int[] arr = new int[size];
 

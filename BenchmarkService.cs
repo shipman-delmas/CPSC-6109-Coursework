@@ -13,32 +13,33 @@ public class BenchmarkService
         int n = data.Length;
         string result = "";
 
-        int[] countingData = data;
-        int[] mergeData = data;
-        int[] radixData = data;
-        int[] introData = data;
+        int[] original = data;
 
+        int[] testData = (int[])original.Clone();
         Stopwatch timer = Stopwatch.StartNew();
-        CountingSort.Sort(countingData, countingData.Max());
+        CountingSort.Sort(testData, testData.Max());
         timer.Stop();
 
         result += $"Counting Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
 
+        testData = (int[])original.Clone();
         timer.Restart();
         int[] tempArr = new int[n];
-        MergeSort.Sort(mergeData, tempArr, n);
+        MergeSort.Sort(testData, tempArr, n);
         timer.Stop();
         
         result += $"Merge Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
         
+        testData = (int[])original.Clone();
         timer.Restart();
-        RadixSort.Sort(radixData, n);
+        RadixSort.Sort(testData, n);
         timer.Stop();
         
         result += $"Radix Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
 
+        testData = (int[])original.Clone();
         timer.Restart();
-        IntroSort.Sort(introData);
+        IntroSort.Sort(testData);
         timer.Stop();
         
         result += $"Intro Sort: {timer.Elapsed.TotalMilliseconds} ms \n";
